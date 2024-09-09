@@ -1,47 +1,51 @@
+fun convertPoundsToKilograms(pounds: Double): Double {
+    return pounds * 0.453592
+}
+
+fun convertMilesToKilometers(miles: Double): Double {
+    return miles * 1.60934
+}
+
+fun convertFahrenheitToCelsius(fahrenheit: Double): Double {
+    return (fahrenheit - 32) * 5 / 9
+}
+
+fun calculateAverageAge(studentAges: List<Int>): Double {
+    return studentAges.sum().toDouble() / studentAges.size
+}
+
 fun main() {
-    // Weight conversion
-    val pounds = 300.0
-    val kilograms = pounds * 0.453592
-    println("Weight in Pounds (lbs): $pounds")
-    println("Weight converted to Kilograms (kg): $kilograms\n")
+    val weightInPounds = 150.0
+    val distanceInMiles = 100.0
+    val temperatureInFahrenheit = 98.6
 
-    // Length conversion
-    val miles = 21.0
-    val kilometers = miles * 1.60934
-    println("Length in Miles (mi): $miles")
-    println("Length in Kilometers (km): $kilometers\n")
+    val weightInKilograms = convertPoundsToKilograms(weightInPounds)
+    val distanceInKilometers = convertMilesToKilometers(distanceInMiles)
+    val temperatureInCelsius = convertFahrenheitToCelsius(temperatureInFahrenheit)
 
-    // Temperature conversion
-    val fahrenheit = 9900.0
-    val celsius = (fahrenheit - 32) * 5/9
-    println("Temperature in Fahrenheit (°F): $fahrenheit")
-    println("Temperature in Celsius (°C): $celsius\n")
+    println("Weight: $weightInPounds lbs -> $weightInKilograms kg")
+    println("Distance: $distanceInMiles mi -> $distanceInKilometers km")
+    println("Temperature: $temperatureInFahrenheit °F -> $temperatureInCelsius °C")
 
-    // Average age calculation
-    val ages = listOf(22, 19, 20, 20, 18, 21, 23, 25, 19, 21)
-    println("Ages of students:")
-    for (age in ages) {
-        println("Age: $age")
-    }
-    val averageAge = ages.average()
-    println("\nThe average age of the students is: $averageAge\n")
+    val studentAges = listOf(20, 21, 22, 23, 24, 25, 26, 27, 28, 29)
+    val averageAge = calculateAverageAge(studentAges)
 
-    // Fantasy story with variables
-    val demonKing = "Ibrahim the Destroyer"
-    val weapon = "Sword of Damage go brrrrrs"
-    val armor = "Armor of Pls Dont Hurt Mex"
-    val secretSkill = "12 Secret Herbs and Spices"
-    val ultimateSkill = "Unlimited Burger Works"
+    println("Student Ages: $studentAges")
+    println("Average Age: $averageAge")
+
+    // Fantasy story
+    val hero1 = "Risa the Brave"
+    val hero2 = "Sara the Wise"
+    val villain = "Quiboloy the Shadow"
+    val weapon = "Blade of Eternal Light"
+    val spell = "Arcane Fury"
 
     val story = """
-        The evil demon king $demonKing has attacked the capital of the Magical Kingdom. 
-        In order to stop the demon king, the heroes banded together and fought back, 
-        but the demon king is simply too strong. He swings his mighty blade, $weapon, 
-        to attack the hero's party. When they try to counterattack, their attacks are 
-        deflected thanks to the $armor of the demon king. Using his secret skill, 
-        $secretSkill, the demon king is then able to quickly gather the mana and items 
-        needed to cast his ultimate skill, $ultimateSkill, to defeat the heroes.
+        In the enchanted realm of Eldoria, a great threat looms. The dark sorceress $villain has unleashed her minions upon the peaceful villages. 
+        To combat this evil, two legendary heroes, $hero1 and $hero2, arise to defend their homeland. 
+        Armed with the powerful $weapon, they set out on a perilous journey to confront Quiboloy. 
+        As they traverse the treacherous wilderness, they prepare to unleash their ultimate spell, $spell, 
+        hoping to vanquish the darkness and restore peace to Eldoria once and for all.
     """.trimIndent()
-
-    println(story)
+    println("\n$story")
 }
