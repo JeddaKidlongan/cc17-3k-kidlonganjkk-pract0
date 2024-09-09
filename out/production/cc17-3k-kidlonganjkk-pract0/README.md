@@ -1,1 +1,0 @@
-# cc17-3k-kidlonganjkk-pract0
